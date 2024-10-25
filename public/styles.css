@@ -1,23 +1,93 @@
 /* Base styling, feel free to remove or alter */
 
 body {
-    background: linear-gradient(90deg, rgba(93,142,251,1) 0%, rgba(93,142,251,1) 50%, rgba(0,212,255,1) 100%);
-    height: 100%;
-    padding: 0px;
-    margin: 0px;
-    font-family: 'Lato', sans-serif;
-    display: flex;
-    color: #F6F6F6;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 142, 251, 1) 0%,
+    rgba(93, 142, 251, 1) 50%,
+    rgba(0, 212, 255, 1) 100%
+  );
+  /* Alternate background colour suggestion */
+  background: linear-gradient(
+    90deg,
+    rgba(46, 53, 50, 1) 0%,
+    rgba(46, 53, 50, 1) 50%,
+    rgba(46, 53, 50, 0.9) 100%
+  );
+  /* Alternate background colour suggestion */
+  background: #333;
+  height: 100%;
+  padding: 0px;
+  margin: 0px;
+  font-family: "Lato", sans-serif;
+  display: flex;
+  color: #f6f6f6;
+  color: #f2f4f3;
 }
 
 .main-content {
-    display: flex;
-    justify-content: center;
-    flex: 1;
-    align-items: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 60px;
 }
 
 .main-content h1 {
-    font-size: 50px;
+  font-size: 50px;
+}
+
+/* Nav Bar Styles */
+#nav-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 8px 20px;
+  background: #292929;
+  background: #fd504a;
+  /* border: 1px solid #a39300; */
+  /* border: 1px solid #f6f6f6; */
+  /* border-bottom: 1px solid #f6f6f6; */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  box-sizing: border-box;
+}
+
+#nav-bar ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  justify-content: space-between;
+  width: 100%;
+}
+
+#nav-bar ul li {
+  flex-grow: 1;
+  text-align: center;
+}
+
+#nav-bar ul li a {
+  color: #f6f6f6;
+  /* color: #fd504a; */
+  text-decoration: none;
+  letter-spacing: 1px;
+  font-weight: 600;
+  padding: 8px 0;
+  display: block;
+  font-size: 18px;
+  border-radius: 5px;
+  border: 1px solid #ffffff00;
+}
+
+#nav-bar ul li a:hover {
+  /* background-color: #555;
+  background-color: #fd504a; */
+  color: #f6f6f6;
+  /* color: #fd504a; */
+  /* border: 1px solid #c8b400; */
+  border: 1px solid #f6f6f6;
 }
