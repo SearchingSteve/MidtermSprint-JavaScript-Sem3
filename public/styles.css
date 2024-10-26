@@ -153,3 +153,36 @@ body {
   border-top: 1px solid #f6f6f6;
   margin: 20px 0;
 }
+
+.topRatedMovie:nth-child(odd){
+  background-color: #fd504a;
+  padding: 10px;
+  border: 1px solid #a39300;
+  border: 1px solid #f6f6f6;
+  border-radius: 5px;
+}
+
+.topRatedMovie:nth-child(even){
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.topRatedMovie{
+  list-style: none;
+  margin: 10px;
+}
+
+.topRatedMovie:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+  border: 1px solid #f6f6f6;
+}
+
+.topRatedMovie h2{
+  text-decoration: underline;
+}
+
+.topRatedMovie p{
+  font-size: 16pt;
+}
