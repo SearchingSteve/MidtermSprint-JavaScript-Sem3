@@ -36,7 +36,6 @@ app.get("/random", (request, response) => {
 
 app.get("/upcoming", (request, response) => {
   fiveUpcomingMovies = getUpcomingMovies(5);
-  console.log(fiveUpcomingMovies);
   response.render("upcoming", { fiveUpcomingMovies });
 });
 

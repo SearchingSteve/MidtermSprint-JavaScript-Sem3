@@ -67,7 +67,3 @@ module.exports = {
   selectRandomMovieId,
   getUpcomingMovies,
 };
-
-getUpcomingMovies(3);
-getUpcomingMovies(5);
-getUpcomingMovies(10);
