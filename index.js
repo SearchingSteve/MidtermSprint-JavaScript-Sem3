@@ -5,8 +5,10 @@ const {
   getMoviesByGenre,
   getMovieDetailsById,
   selectRandomMovieId,
+  getUpcomingMovies,
 } = require("./utils/movieUtils");
 const { Movies, Genres } = require("./utils/data");
+const { get } = require("express/lib/response");
 
 const app = express();
 
@@ -33,7 +35,9 @@ app.get("/random", (request, response) => {
 });
 
 app.get("/upcoming", (request, response) => {
-  response.render("upcoming", {});
+  fiveUpcomingMovies = getUpcomingMovies(5);
+  console.log(fiveUpcomingMovies);
+  response.render("upcoming", { fiveUpcomingMovies });
 });
 
 const port = 3000;
