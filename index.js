@@ -27,7 +27,8 @@ app.get("/movie/:id", (request, response) => {
 
 //Add remaining routes here
 app.get("/top_rated", (request, response) => {
-  response.render("top_rated", {});
+  const topRatedMovies = getTopRatedMovies(10);
+  response.render("top_rated", { topRatedMovies });
 });
 
 app.get("/random", (request, response) => {
