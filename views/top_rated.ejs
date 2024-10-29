@@ -7,28 +7,31 @@
 
             <ul>
 
-                <% topRatedMovies.forEach(movie => { %>
+            <% topRatedMovies.forEach(movie => { %>
 
-                <li class="top-rated-movie">
-                    
-                    <h2> 
-                        <%= movie.title %> (<%= movie.releaseYear %>)
-                    </h2>
-                    <p>
-                        <strong> Rating: </strong> <%= movie.rating %>
-                    </p>
-                    <p>
-                        <strong> Director: </strong> <%= movie.director %>
-                    </p>
-                    <p>
-                        <strong> Description: </strong> <%=movie.description %>
-                    </p>
-                    <p>
-                        <strong> Genre: </strong> <%=movie.genre %>
-                    </p>
+        
+                        <li class="top-rated-movie" onclick="location.href='/<%= movie.id %>';">
+                            
+                            <h2> 
+                                <%= movie.title %> (<%= movie.releaseYear %>)
+                            </h2>
+                
+                            <p>
+                                <strong> Description: </strong> <%=movie.description %>
+                            </p>
 
-                </li>
-                <% }) %>
+                            <p>
+                                <strong> Genre: </strong> <%=movie.genre %>
+                            </p>
+
+                            <p>
+                                <strong> Rating: </strong> <%= movie.rating %>
+                            </p>
+                        
+                        </li>
+            
+            <% }) %>
+            
             </ul>
         </main>
     </body>
