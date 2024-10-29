@@ -101,12 +101,13 @@ body {
 
 /* Movie Card Styles */
 .movie-container {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns of equal width */
   gap: 24px;
   padding: 0px 50px;
+  justify-items: center;
 }
+
 
 .movie-card {
   display: flex;

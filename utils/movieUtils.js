@@ -34,8 +34,21 @@ function getMovieDetailsById(id) {
  * @returns {number} - A random movie ID
  */
 function selectRandomMovieId() {
-  // Implementation here
+  return Math.floor(Math.random() * Movies.length);
 }
+
+/**
+ * Get `x` random movies
+ * @param {number} x - The number of random movies to retrieve
+ * @returns {Array.<Movies>} - An array of random movies
+ */
+function getRandomMovies(num = 9) {
+  const shuffled = Movies.sort(() => 0.5 - Math.random());
+  return shuffled.slice(0, num);
+}
+
+module.exports = { getRandomMovies };
+
 
 /**
  * Get the `x` soonest relasing upcoming movies
@@ -65,5 +78,6 @@ module.exports = {
   getTopRatedMovies,
   getMovieDetailsById,
   selectRandomMovieId,
+  getRandomMovies,
   getUpcomingMovies,
 };

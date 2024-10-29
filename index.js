@@ -5,6 +5,7 @@ const {
   getMoviesByGenre,
   getMovieDetailsById,
   selectRandomMovieId,
+  getRandomMovies,
   getUpcomingMovies,
 } = require("./utils/movieUtils");
 const { Movies, Genres } = require("./utils/data");
@@ -17,6 +18,8 @@ app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 
 app.get("/", (request, response) => {
+  const randomMovies = getRandomMovies(9);
+  response.render('index.ejs', { movies: randomMovies });
   response.render("index");
 });
 
