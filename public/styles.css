@@ -194,7 +194,7 @@ body {
   display: flex;
   direction: rtl;
   gap: 4px;
-  padding: 20px;
+  padding: 50px;
   position: center;
   background-color: #333;
   border: 1px solid #a39300;
@@ -202,7 +202,6 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   justify-content: center;
-  text-align: center;
 }
 
 .userRating input[type="radio"] {
@@ -217,10 +216,19 @@ body {
 .userRating label svg {
   fill: #ddd;
   transition: fill 0.3s;
+  width: 2rem;
+  height: 2rem;
 }
 
-.userRating label:hover ~ label svg,
-.userRating input:checked ~ label svg {
+/* Fill hearts on hover up to and including the hovered heart */
+.userRating label:hover svg,
+.userRating label:hover ~ label svg {
+  fill: #fd504a;
+}
+
+/* Fill hearts up to the checked heart */
+.userRating input:checked ~ label svg,
+.userRating input:checked ~ label ~ label svg {
   fill: #fd504a;
 }
 
