@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 
 // Additional routes
 app.get("/top_rated", (request, response) => {
-  const topRatedMovies = getTopRatedMovies(10);
+  const topRatedMovies = getTopRatedMovies(15);
   response.render("top_rated", { topRatedMovies });
 });
 
