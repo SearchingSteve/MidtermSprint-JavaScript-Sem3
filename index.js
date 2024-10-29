@@ -9,7 +9,6 @@ const {
   getUpcomingMovies,
 } = require("./utils/movieUtils");
 const { Movies, Genres } = require("./utils/data");
-const { get } = require("express/lib/response");
 
 const app = express();
 
@@ -17,18 +16,13 @@ app.set("view engine", "ejs");
 app.set("views", path.join(__dirname, "views"));
 app.use(express.static("public"));
 
+// Route to render the main gallery page with random movies
 app.get("/", (request, response) => {
-  const randomMovies = getRandomMovies(9);
-  response.render('index.ejs', { movies: randomMovies });
-  response.render("index");
+  const randomMovies = getRandomMovies(9); // Get 9 random movies
+  response.render("index", { movies: randomMovies }); // Pass movies to index.ejs
 });
 
-app.get("/movie/:id", (request, response) => {
-  //For use with links like: /movie/1
-  const movieId = request.params.id;
-});
-
-//Add remaining routes here
+// Additional routes
 app.get("/top_rated", (request, response) => {
   response.render("top_rated", {});
 });
@@ -38,8 +32,20 @@ app.get("/random", (request, response) => {
 });
 
 app.get("/upcoming", (request, response) => {
-  fiveUpcomingMovies = getUpcomingMovies(5);
+  const fiveUpcomingMovies = getUpcomingMovies(5);
   response.render("upcoming", { fiveUpcomingMovies });
+});
+
+// Dynamic route to render details for a specific movie by ID
+app.get("/:id", (req, res) => {
+  const movieId = parseInt(req.params.id);
+  const movie = Movies.find((movie) => movie.id === movieId); // Find movie by ID
+
+  if (movie) {
+    res.render("movie", { movie }); // Render movie.ejs with the movie details
+  } else {
+    res.status(404).send("Movie not found"); // Handle 404 error where movie isn't found
+  }
 });
 
 const port = 3000;

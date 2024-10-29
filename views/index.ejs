@@ -1,19 +1,29 @@
 <%- include('partials/header') %>
-<main class="main-content">
-    <h1>Movie Gallery 🎞️</h1>
-    <p class="heading-description">Here are 9 random movies. Click each card for more details.</p>
-    <section class="movie-container">
-        <% movies.forEach(movie => { %> <!-- Loop over the 9 movies -->
-            <a href="/<%= movie.id %>">
-                <div class="movie-card">
-                    <h3 class="movie-card-title"><%= movie.title %></h3>
-                    <p class="movie-card-release-date"><%= movie.releaseYear %></p>
-                    <div class="white-horizontal-rule"></div>
-                    <p class="movie-card-description"><%= movie.description %></p>
-                </div>
-            </a>
-        <% }) %>
-    </section>
-</main>
-</body>
-</html>
+    <main class="main-content">
+        <h1>Movie Gallery 🎞️</h1>
+        <p class="heading-description">Here are 9 random movies. Click each card for more details.</p>
+        <section class="movie-container">
+            <% movies.forEach(movie=> { %>
+                <a href="/<%= movie.id %>">
+                    <div class="movie-card">
+                        <h3 class="movie-card-title">
+                            <%= movie.title %>
+                        </h3>
+                        <p class="movie-card-release-date">
+                            <%= movie.releaseYear %>
+                        </p>
+                        <div class="white-horizontal-rule"></div>
+                        <p class="movie-card-description">
+                            <%= movie.description %>
+                        </p>
+                        <p class="movie-card-rating">
+                            <strong>Rating:</strong> <%= movie.rating ? movie.rating : 'Not rated yet' %>
+                        </p>
+                    </div>
+                </a>
+                <% }) %>
+        </section>
+    </main>
+    </body>
+
+    </html>
