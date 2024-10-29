@@ -1,8 +1,7 @@
 <%- include('partials/header') %>
 <main class="main-content">
-    <section class="movie-details">
+    <section class="movie-details" style="margin-top: 50px;">
         <h1><%= movie.title %></h1>
-        
         <div class="movie-details" style="background: #333;">
             <p class="movie-info"><strong>Release Year:</strong> <%= movie.releaseYear %></p>
             <p class="movie-info"><strong>Genre:</strong> <%= movie.genre %></p>
@@ -17,7 +16,7 @@
         </div>
 
         <!-- Allow user to rate the movie and keep their rating on current session - Not persistent -->
-        <h3>Leave your rating:</h3>
+        <h3 style="text-align: center;">Leave your rating:</h3>
         <div class="userRating" data-userRating="<%= movie.rating %>">
             <% for (let i = 10; i >= 1; i--) { %>
                 <input type="radio" name="userRate" id="heart<%= i %>" value="<%= i %>">
@@ -30,6 +29,26 @@
         </div>
       
     </section>
+
+
+    <section class="suggested-movies">
+        <h2>More Movies You May Like</h2>
+        <div class="movie-container">
+            <% similarMovies.forEach(similarMovie => { %></a>
+                <a href="/<%= similarMovie.id %>">
+                <div class="movie-card">
+                    <h3><%= similarMovie.title %></h3>
+                    <p><strong>Release Year:</strong> <%= similarMovie.releaseYear %></p>
+                    <p><strong>Genre:</strong> <%= similarMovie.genre %></p>
+                    <p><strong>Rating:</strong> <%= similarMovie.rating %></p>
+                    <a href="/<%= similarMovie.id %>">View Details</a>
+                </div>
+            </a>
+            <% }) %>
+        </div>
+    </section>
+
+
 </main>
 
 <script>

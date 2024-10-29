@@ -8,7 +8,13 @@ const { Movies, Genres } = require("./data");
  * @returns {Array.<Movies>} - An array of movies matching the genre
  */
 function getMoviesByGenre(genre, x) {
-  // Implementation here
+  return(
+    Movies
+      .filter((movie) => movie.genre === genre) // filter movies by genre
+     // return 3 random movies of same genre
+      .sort(() => Math.random() - 0.5) // shuffle movies randomly
+      .slice(0, x) // return first x movies
+  )
 }
 
 /**
@@ -17,14 +23,15 @@ function getMoviesByGenre(genre, x) {
  * @returns {Array.<Movies>} - An array of top-rated movies
  */
 function getTopRatedMovies(x) {
-  // Implementation here
-  return Movies
-  // exclude movies from data.js with "null" as a rating 
-  .filter(movie => movie.rating !== null)
-  // sort rating from highest to lowest
-  .sort((a, b) => b.rating - a.rating)
-  // return top (x) rated movies 
-  .slice(0, x)
+  return (
+    Movies
+      // exclude movies from data.js with "null" as a rating
+      .filter((movie) => movie.rating !== null)
+      // sort rating from highest to lowest
+      .sort((a, b) => b.rating - a.rating)
+      // return top (x) rated movies
+      .slice(0, x)
+  );
 }
 
 /**
@@ -42,7 +49,8 @@ function getMovieDetailsById(id) {
  * @returns {number} - A random movie ID
  */
 function selectRandomMovieId() {
-  return Math.floor(Math.random() * Movies.length);
+  const randomIndex = Math.floor(Math.random() * Movies.length);
+  return Movies[randomIndex].id; 
 }
 
 /**

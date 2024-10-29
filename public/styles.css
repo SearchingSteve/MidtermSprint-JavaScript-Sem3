@@ -172,6 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin: 20px;
   background: #fd504a;
   border: 1px solid #a39300;
   border: 1px solid #f6f6f6;
@@ -182,12 +183,18 @@ body {
 
 /* .movie-info */
 
+.suggested-movies {
+  text-align: center;
+  padding: 20px;
+  margin: 50px;
+}
+
 /* User rating style */
 .userRating {
   display: flex;
   direction: rtl;
   gap: 4px;
-  padding: 20px;
+  padding: 50px;
   position: center;
   background-color: #333;
   border: 1px solid #a39300;
@@ -195,7 +202,6 @@ body {
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   justify-content: center;
-  text-align: center;
 }
 
 .userRating input[type="radio"] {
@@ -210,10 +216,19 @@ body {
 .userRating label svg {
   fill: #ddd;
   transition: fill 0.3s;
+  width: 2rem;
+  height: 2rem;
 }
 
-.userRating label:hover ~ label svg,
-.userRating input:checked ~ label svg {
+/* Fill hearts on hover up to and including the hovered heart */
+.userRating label:hover svg,
+.userRating label:hover ~ label svg {
+  fill: #fd504a;
+}
+
+/* Fill hearts up to the checked heart */
+.userRating input:checked ~ label svg,
+.userRating input:checked ~ label ~ label svg {
   fill: #fd504a;
 }
 
@@ -229,6 +244,7 @@ body {
 }
 
 /* top rated movies */
+
 
 .top-rated-movie-ul{
   padding: 0;
@@ -247,7 +263,7 @@ body {
   margin-bottom: 10px;
 }
 
-.top-rated-movie:nth-child(even){
+.top-rated-movie:nth-child(even) {
   background-color: transparent;
   padding: 10px;
   border-radius: 5px;
@@ -258,7 +274,7 @@ body {
   margin-bottom: 10px;
 }
 
-.top-rated-movie{
+.top-rated-movie {
   list-style: none;
   margin: 10px;
 }
@@ -269,10 +285,10 @@ body {
   border: 1px solid #f6f6f6;
 }
 
-.top-rated-movie h2{
+.top-rated-movie h2 {
   text-decoration: underline;
 }
 
-.top-rated-movie p{
+.top-rated-movie p {
   font-size: 16pt;
 }
