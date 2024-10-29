@@ -28,13 +28,21 @@ app.get("/top_rated", (request, response) => {
   response.render("top_rated", { topRatedMovies });
 });
 
-app.get("/random", (request, response) => {
-  response.render("random", {});
-});
-
 app.get("/upcoming", (request, response) => {
   const fiveUpcomingMovies = getUpcomingMovies(5);
   response.render("upcoming", { fiveUpcomingMovies });
+});
+
+app.get("/random", (request, response) => {
+  const randomMovieId = selectRandomMovieId(); // Get a random movie ID
+  const randomMovie = getMovieDetailsById(randomMovieId); // Get the movie details for the random ID
+  console.log(randomMovieId);
+  console.log(randomMovie);
+  if (randomMovie) {
+    response.render("movie", { movie: randomMovie }); // Render movie.ejs with the random movie details
+  } else {
+    response.status(404).send("Random movie not found"); // Handle case where no movie is found
+  }
 });
 
 // Dynamic route to render details for a specific movie by ID
