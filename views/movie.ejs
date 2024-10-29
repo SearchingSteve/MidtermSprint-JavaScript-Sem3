@@ -1,19 +1,52 @@
 <%- include('partials/header') %>
 <main class="main-content">
     <section class="movie-details">
-        <h1 class><%= movie.title %></h1>
+        <h1><%= movie.title %></h1>
         
-        <div class="movie-details">
+        <div class="movie-details" style="background: #333;">
             <p class="movie-info"><strong>Release Year:</strong> <%= movie.releaseYear %></p>
             <p class="movie-info"><strong>Genre:</strong> <%= movie.genre %></p>
             <p class="movie-info"><strong>Director:</strong> <%= movie.director %></p>
-            <p class="movie-info"><strong>Rating:</strong> <%= movie.rating ? movie.rating : 'Not rated yet' %></p>
+            <p class="movie-info">      
+                <strong>Rating:</strong> <%= movie.rating ? movie.rating : 'Not rated yet' %></p>
+
+                <div class="white-horizontal-rule"></div>
+                <h2><u>Description</u></h2>
+                <p class="movie-description"><%= movie.description %></p>
+
         </div>
-        
-        <div class="white-horizontal-rule"></div>
-        
-        <p class="movie-description"><%= movie.description %></p>
+
+        <!-- Allow user to rate the movie and keep their rating on current session - Not persistent -->
+        <h3>Leave your rating:</h3>
+        <div class="userRating" data-userRating="<%= movie.rating %>">
+            <% for (let i = 10; i >= 1; i--) { %>
+                <input type="radio" name="userRate" id="heart<%= i %>" value="<%= i %>">
+                <label for="heart<%= i %>" title="<%= i %>">
+                    <svg viewBox="0 0 24 24" height="1em" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"></path>
+                    </svg>
+                </label>
+            <% } %>
+        </div>
+      
     </section>
 </main>
+
+<script>
+    // Get the saved user rating from localStorage and set it as checked
+    const movieId = "<%= movie.id %>";
+    const savedUserRating = localStorage.getItem(`movieUserRating-${movieId}`);
+    if (savedUserRating) {
+        document.getElementById(`heart${savedUserRating}`).checked = true;
+    }
+
+    // Add event listeners to save the rating when the user clicks on a heart
+    document.querySelectorAll('input[name="userRate"]').forEach(radio => {
+        radio.addEventListener('change', function() {
+            localStorage.setItem(`movieUserRating-${movieId}`, this.value);
+        });
+    });
+</script>
+
 </body>
 </html>

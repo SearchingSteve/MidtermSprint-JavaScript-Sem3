@@ -26,7 +26,7 @@ function getTopRatedMovies(x) {
  * @returns {Movies} - The movie object
  */
 function getMovieDetailsById(id) {
-  const movie = Movies.find(movie => movie.id === id);
+  const movie = Movies.find((movie) => movie.id === id);
   return movie || null;
 }
 
@@ -49,7 +49,6 @@ function getRandomMovies(num = 9) {
 }
 
 module.exports = { getRandomMovies };
-
 
 /**
  * Get the `x` soonest relasing upcoming movies
