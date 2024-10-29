@@ -1,9 +1,34 @@
 <%- include('partials/header') %>
         <main class="main-content">
             <h1>Top Rated Movies ⭐️</h1>
-            <p>
-                
+            <p class="heading-description">
+                "Here Are Our <%= topRatedMovies.length %> Top Rated Movies!"
             </p>
+
+            <ul>
+                <li class="top-rated-movie">
+                    
+
+                    <% topRatedMovies.forEach(movie => { %>
+                    <h2> 
+                        <%= movie.title %> (<%= movie.releaseYear %>)
+                    </h2>
+                    <p>
+                        <strong> Rating: </strong> <%= movie.rating %>
+                    </p>
+                    <p>
+                        <strong> Director: </strong> <%= movie.director %>
+                    </p>
+                    <p>
+                        <strong> Description: </strong> <%=movie.description %>
+                    </p>
+                    <p>
+                        <strong> Genre: </strong> <%=movie.genre %>
+                    </p>
+
+                </li>
+                <% }) %>
+            </ul>
         </main>
     </body>
 </html>
