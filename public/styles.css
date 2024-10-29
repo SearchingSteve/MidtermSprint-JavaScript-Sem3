@@ -230,6 +230,10 @@ body {
 
 /* top rated movies */
 
+.top-rated-movie-ul{
+  padding: 0;
+}
+
 .top-rated-movie:nth-child(odd){
   background-color: #fd504a;
   padding: 10px;
