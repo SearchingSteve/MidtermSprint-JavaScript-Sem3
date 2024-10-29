@@ -2,14 +2,15 @@
         <main class="main-content">
             <h1>Top Rated Movies ⭐️</h1>
             <p class="heading-description">
-                "Here Are Our <%= topRatedMovies.length %> Top Rated Movies!"
+                Here Are Our <%= topRatedMovies.length %> Top Rated Movies!
             </p>
 
             <ul>
+
+                <% topRatedMovies.forEach(movie => { %>
+
                 <li class="top-rated-movie">
                     
-
-                    <% topRatedMovies.forEach(movie => { %>
                     <h2> 
                         <%= movie.title %> (<%= movie.releaseYear %>)
                     </h2>
