@@ -151,7 +151,23 @@ body {
   margin: 0;
 }
 
+
 .white-horizontal-rule {
   border-top: 1px solid #f6f6f6;
   margin: 20px 0;
 }
+
+
+/* Movie page styles */
+.movie-details{
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background: #fd504a;
+  border: 1px solid #a39300;
+  border: 1px solid #f6f6f6;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  font-size: 18px;
+}
+

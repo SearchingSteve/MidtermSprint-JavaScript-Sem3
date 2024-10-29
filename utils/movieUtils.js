@@ -26,7 +26,8 @@ function getTopRatedMovies(x) {
  * @returns {Movies} - The movie object
  */
 function getMovieDetailsById(id) {
-  // Implementation here
+  const movie = Movies.find(movie => movie.id === id);
+  return movie || null;
 }
 
 /**
