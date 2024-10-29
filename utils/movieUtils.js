@@ -8,7 +8,13 @@ const { Movies, Genres } = require("./data");
  * @returns {Array.<Movies>} - An array of movies matching the genre
  */
 function getMoviesByGenre(genre, x) {
-  // Implementation here
+  return(
+    Movies
+      .filter((movie) => movie.genre === genre) // filter movies by genre
+     // return 3 random movies of same genre
+      .sort(() => Math.random() - 0.5) // shuffle movies randomly
+      .slice(0, x) // return first x movies
+  )
 }
 
 /**
@@ -17,7 +23,6 @@ function getMoviesByGenre(genre, x) {
  * @returns {Array.<Movies>} - An array of top-rated movies
  */
 function getTopRatedMovies(x) {
-  // Implementation here
   return (
     Movies
       // exclude movies from data.js with "null" as a rating

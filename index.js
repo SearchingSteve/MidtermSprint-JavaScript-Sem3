@@ -36,6 +36,17 @@ app.get("/upcoming", (request, response) => {
 app.get("/random", (request, response) => {
   const randomMovieId = selectRandomMovieId(); // Get a random movie ID
   const randomMovie = getMovieDetailsById(randomMovieId); // Get the movie details for the random ID
+  if (randomMovie) {
+    const similarMovies = getMoviesByGenre(randomMovie.genre, 3); // Get 3 random movies of the same genre
+    response.render("movie", { movie: randomMovie, similarMovies }); // Render movie.ejs with the random movie details
+  } else {
+    response.status(404).send("Random movie not found"); // Handle case where no movie is found
+  }
+});
+
+app.get("/random", (request, response) => {
+  const randomMovieId = selectRandomMovieId(); // Get a random movie ID
+  const randomMovie = getMovieDetailsById(randomMovieId); // Get the movie details for the random ID
   console.log(randomMovieId);
   console.log(randomMovie);
   if (randomMovie) {

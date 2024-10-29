@@ -172,6 +172,7 @@ body {
   display: flex;
   flex-direction: column;
   padding: 20px;
+  margin: 20px;
   background: #fd504a;
   border: 1px solid #a39300;
   border: 1px solid #f6f6f6;
@@ -181,6 +182,12 @@ body {
 }
 
 /* .movie-info */
+
+.suggested-movies {
+  text-align: center;
+  padding: 20px;
+  margin: 50px;
+}
 
 /* User rating style */
 .userRating {
@@ -230,7 +237,7 @@ body {
 
 /* top rated movies */
 
-.top-rated-movie:nth-child(odd){
+.top-rated-movie:nth-child(odd) {
   background-color: #fd504a;
   padding: 10px;
   border: 1px solid #a39300;
@@ -238,13 +245,13 @@ body {
   border-radius: 5px;
 }
 
-.top-rated-movie:nth-child(even){
+.top-rated-movie:nth-child(even) {
   background-color: transparent;
   padding: 10px;
   border-radius: 5px;
 }
 
-.top-rated-movie{
+.top-rated-movie {
   list-style: none;
   margin: 10px;
 }
@@ -255,10 +262,10 @@ body {
   border: 1px solid #f6f6f6;
 }
 
-.top-rated-movie h2{
+.top-rated-movie h2 {
   text-decoration: underline;
 }
 
-.top-rated-movie p{
+.top-rated-movie p {
   font-size: 16pt;
 }
