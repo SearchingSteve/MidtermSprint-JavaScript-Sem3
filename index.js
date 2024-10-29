@@ -44,25 +44,14 @@ app.get("/random", (request, response) => {
   }
 });
 
-app.get("/random", (request, response) => {
-  const randomMovieId = selectRandomMovieId(); // Get a random movie ID
-  const randomMovie = getMovieDetailsById(randomMovieId); // Get the movie details for the random ID
-  console.log(randomMovieId);
-  console.log(randomMovie);
-  if (randomMovie) {
-    response.render("movie", { movie: randomMovie }); // Render movie.ejs with the random movie details
-  } else {
-    response.status(404).send("Random movie not found"); // Handle case where no movie is found
-  }
-});
-
 // Dynamic route to render details for a specific movie by ID
 app.get("/:id", (req, res) => {
   const movieId = parseInt(req.params.id);
   const movie = Movies.find((movie) => movie.id === movieId); // Find movie by ID
 
   if (movie) {
-    res.render("movie", { movie }); // Render movie.ejs with the movie details
+    const similarMovies = getMoviesByGenre(movie.genre, 3); // Get 3 random movies of the same genre
+    res.render("movie", { movie, similarMovies }); // Render movie.ejs with the movie details
   } else {
     res.status(404).send("Movie not found"); // Handle 404 error where movie isn't found
   }

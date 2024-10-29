@@ -34,7 +34,8 @@
     <section class="suggested-movies">
         <h2>More Movies You May Like</h2>
         <div class="movie-container">
-            <% similarMovies.forEach(similarMovie => { %>
+            <% similarMovies.forEach(similarMovie => { %></a>
+                <a href="/<%= similarMovie.id %>">
                 <div class="movie-card">
                     <h3><%= similarMovie.title %></h3>
                     <p><strong>Release Year:</strong> <%= similarMovie.releaseYear %></p>
@@ -42,6 +43,7 @@
                     <p><strong>Rating:</strong> <%= similarMovie.rating %></p>
                     <a href="/<%= similarMovie.id %>">View Details</a>
                 </div>
+            </a>
             <% }) %>
         </div>
     </section>
