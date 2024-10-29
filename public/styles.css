@@ -230,18 +230,32 @@ body {
 
 /* top rated movies */
 
+.top-rated-movie-ul{
+  padding: 0;
+}
+
 .top-rated-movie:nth-child(odd){
   background-color: #fd504a;
   padding: 10px;
   border: 1px solid #a39300;
   border: 1px solid #f6f6f6;
   border-radius: 5px;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .top-rated-movie:nth-child(even){
   background-color: transparent;
   padding: 10px;
   border-radius: 5px;
+  width: 80%;
+  justify-self: center;
+  align-self: center;
+  margin: 0 auto;
+  margin-bottom: 10px;
 }
 
 .top-rated-movie{
