@@ -227,3 +227,38 @@ body {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 100%);
   pointer-events: none;
 }
+
+/* top rated movies */
+
+.top-rated-movie:nth-child(odd){
+  background-color: #fd504a;
+  padding: 10px;
+  border: 1px solid #a39300;
+  border: 1px solid #f6f6f6;
+  border-radius: 5px;
+}
+
+.top-rated-movie:nth-child(even){
+  background-color: transparent;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.top-rated-movie{
+  list-style: none;
+  margin: 10px;
+}
+
+.top-rated-movie:hover {
+  transform: scale(1.05);
+  transition: transform 0.3s;
+  border: 1px solid #f6f6f6;
+}
+
+.top-rated-movie h2{
+  text-decoration: underline;
+}
+
+.top-rated-movie p{
+  font-size: 16pt;
+}
