@@ -18,6 +18,13 @@ function getMoviesByGenre(genre, x) {
  */
 function getTopRatedMovies(x) {
   // Implementation here
+  return Movies
+  // exclude movies from data.js with "null" as a rating 
+  .filter(movie => movie.rating !== null)
+  // sort rating from highest to lowest
+  .sort((a, b) => b.rating - a.rating)
+  // return top (x) rated movies 
+  .slice(0, x)
 }
 
 /**
