@@ -1,4 +1,9 @@
-const { getRandomMoviesByGenre, getTopRatedMovies, formatMovieData, getRandomGenre, generateMovieReport } = require("../../utils/movieUtils");
+const { 
+    getMoviesByGenre, 
+    getTopRatedMovies, 
+    getMovieDetailsById,
+     selectRandomMovieId
+} = require("../../utils/movieUtils");
 
 describe('Movie Utility Functions', () => {
     describe('getMoviesByGenre', () => {
