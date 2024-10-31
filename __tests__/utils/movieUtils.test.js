@@ -42,7 +42,23 @@ describe('Movie Utility Functions', () => {
     });
 
     describe('getMovieDetailsById', () => {
-        
+        test('should return a valid movie if id is valid', () => {
+            // specify movie id and generate movie with getMoviesById function
+            const movieID = 1;
+            const movie = getMovieDetailsById(movieID);
+            
+            // expect movie generated and movie in data.js to match
+            expect(movie).toMatchObject({ id: movieID });
+        })
+
+        test('should return an appropriate response (null) if id is invalid', () => {
+            // specify id ensuring it is not valid
+            const invalidMoveID = 29;
+            const movie = getMovieDetailsById(invalidMoveID);
+
+            // expect movie to be null
+            expect(movie).toBe(null);
+        })
     });
 
     describe('selectRandomMovieId', () => {
