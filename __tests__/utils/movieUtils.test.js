@@ -62,7 +62,15 @@ describe('Movie Utility Functions', () => {
     });
 
     describe('selectRandomMovieId', () => {
+        test('should return a random, valid movie', () => {
+            // generate a random ID
+            const movieID = selectRandomMovieId();
+            // retrieve all valid movie ids
+            const validIDMap = Movies.map(movie => movie.id);
 
+            // expect the random id to be within the valid id map
+            expect(validIDMap).toContain(movieID);
+        })
     });
 });
 
