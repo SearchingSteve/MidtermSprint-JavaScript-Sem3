@@ -29,7 +29,16 @@ describe('Movie Utility Functions', () => {
     });
 
     describe('getTopRatedMovies', () => {
+        test('should return (x) amount of top rated movies, ordered from highest to lowest rating', () => {
+            // specify parameter
+            const x = 9;
+            const result = getTopRatedMovies(x);
 
+            // expect 9 (x) movies to be returned
+            expect(result.length).toBe(x);
+            // expect ratings to be ordered highest to lowest
+            expect(result).toEqual(result.slice().sort((a, b) => b.rating - a.rating));
+        })
     });
 
     describe('getMovieDetailsById', () => {
