@@ -1,79 +1,88 @@
+
 # Movie Collection Viewer
-
-This repository contains a dynamic movie collection viewer application, designed as a foundation for building an Express-based web app that showcases and explores a curated collection of movies.
-
-## How to Use This Template
-
-1. **Create Your Own Repository**:
-   - Click the "Use this template" button at the top of the repository page to create your own copy of the repository.
-
-2. **Clone Your Repository**:
-   - After creating your repository, clone it to your local machine:
-     ```bash
-     git clone https://github.com/yourusername/your-repository-name.git
-     cd your-repository-name
-     ```
-
-3. **Install Dependencies**:
-   - Install the necessary npm packages by running:
-     ```bash
-     npm install
-     ```
-
-4. **Run the Application**:
-   - Start the development server:
-     ```bash
-     npm start
-     ```
-   - The application will run locally at `http://localhost:3000`.
 
 ## Project Overview
 
-This project displays a collection of movies, allowing users to view random movies, top-rated movies, and detailed information about each movie. Your task is to complete the functionality and write unit tests for the required features.
+The **Movie Collection Viewer** is a web application that displays a curated collection of movies, allowing users to explore random movies, view top-rated movies, and get detailed information about each film. The application also suggests similar movies based on genres, providing users with recommendations for further exploration.
 
-### Key Features:
+---
 
-- Display a list of 9 random movies on the home page.
-- Show the top 15 rated movies, ordered by their rating.
-- Provide detailed information about a movie when selected.
-- Suggest three similar movies based on genre.
+## Key Features
 
-## Tasks to Complete
+- **Random Movies**: Displays 9 random movies on the home page, allowing users to discover new films.
+- **Top-Rated Movies**: Displays a list of the top 15 rated movies, ordered by their ratings.
+- **Movie Details**: Users can select any movie to view detailed information, such as the plot, cast, and ratings.
+- **Similar Movies**: Suggests three similar movies based on the selected movie's genre, encouraging users to explore related films.
+- **Upcoming Movies**: A page that lists upcoming movies, ensuring users are aware of films being released soon.
 
-1. **Add Functions to Movie Logic**:
-   - You will need to complete functions to:
-     - Retrieve `x` movies by genre.
-     - Get the top-rated movies.
-     - Fetch details of a movie by its ID.
-     - Select a random movie.
+---
 
-2. **Write Unit Tests**:
-   - You are required to write unit tests to verify:
-     - The correct number of movies is returned for a specified genre.
-     - The top-rated movies are returned in the correct order.
-     - Valid details are returned for a valid movie ID.
-     - A valid movie is returned for a random movie selection.
+## Technology Stack
 
-3. **Implement Required Pages**:
-   - Refer to the assignment instructions for detailed requirements on:
-     - Home Page: Display random movies.
-     - Top Rated Movies Page: Show top 15 rated movies.
-     - Movie Detail Page: Display detailed information about a movie.
-     - Upcoming Movies Page: List upcoming movies.
+- **Frontend**: EJS, HTML, CSS
+- **Backend**: Node.js, Express
+- **Database**: Movie data stored in-memory or can be adapted to a database if desired.
+- **Routing**: Dynamic movie routing for detailed pages.
+- **Unit Testing**: Jest for testing the core functionality, including movie retrieval, rating sorting, and random movie selection.
+
+---
+
+## Installation
+
+### Prerequisites
+- **Node.js** (version 14 or higher)
+
+### Clone the Repository
+```bash
+git clone https://github.com/yourusername/your-repository-name.git
+cd your-repository-name
+```
+
+### Install Dependencies
+```bash
+npm install
+```
+
+### Run the Application
+```bash
+npm start
+```
+The application will run locally at `http://localhost:3000`.
+
+---
+
+## Features
+
+- **Home Page**: Displays 9 random movies for user discovery.
+- **Top Rated Movies Page**: Lists the top 15 movies ordered by rating, giving users insight into popular films.
+- **Movie Detail Page**: Allows users to view detailed information about a movie when selected.
+- **Upcoming Movies Page**: Lists upcoming movies, allowing users to track future releases.
+- **Similar Movies**: Each movie detail page will display 3 similar movies based on the genre of the selected movie.
+
+---
 
 ## Running Unit Tests
 
-To run your unit tests, use the following command:
+To run unit tests, use the following command:
 
 ```bash
 npm test
 ```
 
-Ensure your tests cover the core functionality of the application.
+---
 
-## Future Additions 
+## License
 
-- Build out the logic inside the routes.
-- Enhance the UI by refining the EJS templates and CSS styles.
-- Test your project thoroughly before submission.
+This project is provided for **personal use only**. Redistribution, modification, or commercial use in any form is strictly prohibited without prior written permission from the author.
 
+For detailed license terms, refer to the [LICENSE](./LICENSE.md) file.
+
+---
+
+## Credits
+
+This project was collaboratively developed by a dedicated team:
+
+- **[Sara Woodford](https://github.com/sarwoodford)** 
+- **[Abdalnasser Ali](https://github.com/Nasser-A-Ali)** 
+- **[Stephen Crocker](https://github.com/SearchingSteve)** 
