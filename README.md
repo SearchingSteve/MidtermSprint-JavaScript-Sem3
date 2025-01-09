@@ -1,10 +1,6 @@
-Here's a README template for your midterm project, modeled after the restaurant menu generator format:
+# Movie Collection Viewer
 
----
-
-# Movie Collection Viewer - Template Repository
-
-This repository is a template for a movie collection viewing project. Use this project as a starting point to build an Express-based web application that displays information about a collection of movies.
+This repository contains a dynamic movie collection viewer application, designed as a foundation for building an Express-based web app that showcases and explores a curated collection of movies.
 
 ## How to Use This Template
 
@@ -75,12 +71,9 @@ npm test
 
 Ensure your tests cover the core functionality of the application.
 
-## Next Steps
+## Future Additions 
 
 - Build out the logic inside the routes.
 - Enhance the UI by refining the EJS templates and CSS styles.
 - Test your project thoroughly before submission.
 
----
-
-Feel free to adjust any sections or wording to better fit your specific needs!
